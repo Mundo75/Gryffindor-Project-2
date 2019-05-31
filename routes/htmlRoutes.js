@@ -11,6 +11,7 @@ module.exports = function(app) {
     });
   });
 
+<<<<<<< HEAD
   app.get("/takeout", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("takeout", {
@@ -26,6 +27,12 @@ module.exports = function(app) {
       dbExample
     ) {
       res.render("takeout", {
+=======
+  // Load example page and pass in an example by id
+  app.get("/example/:id", function(req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+      res.render("example", {
+>>>>>>> 1a77e715a8d3b5abd1a87b3678b519cc37653885
         example: dbExample
       });
     });
