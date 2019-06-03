@@ -10,9 +10,7 @@ module.exports = function(app) {
       });
     });
   });
-
-<<<<<<< HEAD
-  app.get("/takeout", function(req, res) {
+  app.get("/views/takeout", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("takeout", {
         msg: "Welcome!",
@@ -20,19 +18,20 @@ module.exports = function(app) {
       });
     });
   });
-
+  app.get("/views/stayin", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("stayin", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
   // Load example page and pass in an example by id
-  app.get("/views/takeout", function(req, res) {
+  app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
       dbExample
     ) {
-      res.render("takeout", {
-=======
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("example", {
->>>>>>> 1a77e715a8d3b5abd1a87b3678b519cc37653885
         example: dbExample
       });
     });
