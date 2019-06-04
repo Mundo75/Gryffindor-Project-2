@@ -2,20 +2,37 @@
   line-height: 2.5;
 }
 
+body {
+  background: lightgoldenrodyellow;
+}
+
 #navbar {
   color: white;
   background-color: white;
+  font-family: "Playfair Display", serif;
+}
+
+.container {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  border: 1px solid gray;
+  background: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
 #container-home {
-  background-image: url(/img/redcurry.jpg);
-  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(/img/redcurry.jpg);
+  background-size: cover;
+  height: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   opacity: 0.9;
   margin-bottom: 40px;
+  font-family: "Anton", sans-serif;
 }
 
 .hero-text {
@@ -27,11 +44,20 @@
   color: white;
 }
 
+.card {
+  text-align: center;
+}
+
+.card-header {
+  font-size: 30px;
+  background: #f2a22c;
+}
+
 footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: lightgray;
+  background-color: #f2a22c;
   padding: 20px;
   color: black;
   text-align: center;
