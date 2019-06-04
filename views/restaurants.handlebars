@@ -36,69 +36,55 @@
       <input type="text" id="name" class="form-control" />
       <br>
       <h5>Question 1</h5>
-      <h6>Please enter your City and Zipcode</h6>
-      <input type="text" id="name" class="form-control" placeholder="State/Zipcode" />
+      <h6>Please enter your Current Zipcode</h6>
+      <input type="text" id="zipcode" class="form-control" placeholder="Zipcode" />
       <br>
       <h5>Question 2</h5>
-      <h6>What type of food would are </h6>
+      <h6>What type of food are you craving??</h6>
       <select name="question" id="q2">
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">15 miles</option>
-        <option value="4">20 miles</option>
-        <option value="5">25 miles</option>
+        <option value="american">American</option>
+        <option value="brazilian">Brazilian</option>
+        <option value="cajun">Cajun</option>
+        <option value="caribbean">Caribbean</option>
+        <option value="chinese">Chinese</option>
+        <option value="french">French</option>
+        <option value="greek">Greek</option>
+        <option value="indian">Indian</option>
+        <option value="italian">Italian</option>
+        <option value="mexican">Mexican</option>
+        <option value="thai">Thai</option>
+        <option value="vietnamese">Vietnamese</option>
       </select>
       <br><br>
-      <h5>Question 2</h5>
+      <h5>Question 3</h5>
       <h6>How far are you willing to travel for deliciousness?</h6>
-      <select name="question" id="q2">
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">15 miles</option>
-        <option value="4">20 miles</option>
-        <option value="5">25 miles</option>
-      </select>
-      <br><br>
-      <h5>Question 2</h5>
-      <h6>What type of food would are </h6>
-      <select name="question" id="q2">
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">15 miles</option>
-        <option value="4">20 miles</option>
-        <option value="5">25 miles</option>
-      </select>
-      <br><br>
-      <h5>Question 2</h5>
-      <h6>What type of food would are </h6>
-      <select name="question" id="q2">
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">15 miles</option>
-        <option value="4">20 miles</option>
-        <option value="5">25 miles</option>
-      </select>
-      <br><br>
-      <h5>Question 2</h5>
-      <h6>What type of food would are </h6>
-      <select name="question" id="q2">
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">15 miles</option>
-        <option value="4">20 miles</option>
-        <option value="5">25 miles</option>
-      </select>
-      <br><br>
-      <h4>Question 2</h4>
-      <h5>How far are you willing to travel for deliciousness?</h5>
       <select name="question" id="q3">
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">15 miles</option>
-        <option value="4">20 miles</option>
-        <option value="5">25 miles</option>
+        <option value="8000">5 miles</option>
+        <option value="16100">10 miles</option>
+        <option value="24100">15 miles</option>
+        <option value="32200">20 miles</option>
+        <option value="40000">25 miles</option>
       </select>
       <br><br>
+      <h5>Question 4</h5>
+      <h6>How much are you looking to spend?</h6>
+      <select name="question" id="q4">
+        <option value="1">Inexpensive</option>
+        <option value="2">Moderate</option>
+        <option value="3">Pricy</option>
+        <option value="4">Ultra High End</option>
+      </select>
+      <br><br>
+      <h5>Question 5</h5>
+      <h6>Any special considerations?</h6>
+      <select name="question" id="q5">
+        <option value="vegetarian">Vegetarian</option>
+        <option value="wheelchair_accessible">Wheelchair Accessible</option>
+        <option value="gender_neutral_restrooms">Gender neutral restrooms</option>
+        <option value="pet_friendly">Pet Friendly</option>
+      </select>
+      <br><br>
+     
 
       <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"></i>
         Submit</button>
@@ -106,7 +92,7 @@
     <br>
   </div>
   <!-- Modal -->
-  <div id="results-modal" class="modal fade" role="dialog">
+  {{!-- <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -125,36 +111,6 @@
       </div>
 
     </div>
-  </div>
-  <script>
-    $("#submit").on("click", function (event) {
-      event.preventDefault();
-
-      var userData = {
-        name: $("#name").val(),
-        photo: $("#photo").val(),
-        scores: [
-          $("#q1").val(),
-          $("#q2").val(),
-          $("#q3").val(),
-          $("#q4").val(),
-          $("#q5").val(),
-          $("#q6").val(),
-          $("#q7").val(),
-          $("#q8").val(),
-          $("#q9").val(),
-          $("#q10").val()
-        ]
-      };
-      $.post("/api/survey", userData, function (data) {
-        console.log(userData);
-        $("#match-name").text(data.name);
-        $("#match-img").attr("src", data.photo);
-        $("#results-modal").modal("toggle");
-      });
-
-    });
-
-
-
-  </script>
+  </div> --}}
+<script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>  
