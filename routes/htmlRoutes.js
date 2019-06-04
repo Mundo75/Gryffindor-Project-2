@@ -10,17 +10,25 @@ module.exports = function(app) {
       });
     });
   });
-  app.get("/views/takeout", function(req, res) {
+  app.get("/views/restaurants", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("takeout", {
+      res.render("restaurants", {
         msg: "Welcome!",
         examples: dbExamples
       });
     });
   });
-  app.get("/views/stayin", function(req, res) {
+  app.get("/views/recipes", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("stayin", {
+      res.render("Recipes", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+  app.get("/views/questionare-answers", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("questionare-answers", {
         msg: "Welcome!",
         examples: dbExamples
       });
