@@ -3,44 +3,29 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.render("index");
   });
   app.get("/views/restaurants", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Restaurant.findAll({}).then(function(data) {
       res.render("restaurants", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: data
       });
     });
   });
   app.get("/views/recipes", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("Recipes", {
+    db.Recipe.findAll({}).then(function(data) {
+      res.render("recipes", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: data
       });
     });
   });
   app.get("/views/questionare-answers", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.User.findAll({}).then(function(data) {
       res.render("questionare-answers", {
         msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
+        examples: data
       });
     });
   });
