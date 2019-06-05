@@ -1,3 +1,5 @@
+
+  
   $("#submit").on("click", function(event) {
    event.preventDefault();
 
@@ -19,9 +21,11 @@
    let price = userInput.answers[3];
    let special = userInput.answers[4];
 
-    console.log(radiusMeters);
-    console.log(zipcode);
-    console.log(cuisine);
-    console.log(price);
-    console.log(special);
-  });
+   console.log(radiusMeters);
+   console.log(zipcode);
+   console.log(cuisine);
+   console.log(price);
+   console.log(special);
+   
+});   
+  

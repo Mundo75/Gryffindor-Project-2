@@ -1,4 +1,5 @@
 var db = require("../models");
+var yelp = require("../components/yelp");
 
 module.exports = function(app) {
   // Load index page
