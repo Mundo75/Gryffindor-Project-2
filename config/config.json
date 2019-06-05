@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Redbird7821037*",
-    "database": "exampledb",
+    "password": "password",
+    "database": "fooddb",
     "host": "localhost",
     "dialect": "mysql"
   },
