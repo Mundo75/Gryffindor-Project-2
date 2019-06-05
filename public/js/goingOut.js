@@ -1,7 +1,7 @@
+//let yelp = require("../../components/yelp")
 
-  
-  $("#submit").on("click", function(event) {
-   event.preventDefault();
+$("#restaurantSearch").on("click", function(event) {
+  event.preventDefault();
 
    let userInput = {
      name: $("#name").val(),
@@ -20,12 +20,14 @@
    let radiusMeters = userInput.answers[2];
    let price = userInput.answers[3];
    let special = userInput.answers[4];
+  
 
    console.log(radiusMeters);
    console.log(zipcode);
    console.log(cuisine);
    console.log(price);
    console.log(special);
-   
+
+   yelpCall();
+
 });   
-  
