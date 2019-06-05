@@ -1,5 +1,3 @@
-//let yelp = require("../../components/yelp")
-
 $("#restaurantSearch").on("click", function(event) {
   event.preventDefault();
 
@@ -28,6 +26,6 @@ $("#restaurantSearch").on("click", function(event) {
    console.log(price);
    console.log(special);
 
-   yelpCall();
+   
 
 });   
