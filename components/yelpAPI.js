@@ -1,18 +1,18 @@
 'use strict';
-
+var parameters = require("../routes/yelpRoutes");
 var yelp = require("yelp-fusion"); 
 
-var searchParams = 
-   {
-     term: "restaurants",
-     location: 85016,
-     radius: 4000,
-     categories: "mexican",
-     limit: 3, 
-     price: 2,
-     attributes: "none"
+// var searchParams = 
+//    {
+//      term: "restaurants",
+//      location: 85016,
+//      radius: 4000,
+//      categories: "mexican",
+//      limit: 3, 
+//      price: 2,
+//      attributes: "none"
 
-};
+// };
 
 // module.exports = function(app) {
   
@@ -25,7 +25,7 @@ var apiKey = "jh5DFfaTKLWtMJf2-qdZGL7TE2-mH8KYQJ1lNOrLIp7SscIbLeiDIKsKYCAOwAOQTL
 var client = yelp.client(apiKey);
 
 
-     client.search(searchParams).then(response => {
+     client.search(parameters).then(response => {
 
          //console.log(response.jsonBody.businesses)
      

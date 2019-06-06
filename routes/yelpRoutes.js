@@ -1,4 +1,4 @@
-var API = require("../components/yelpAPI")
+var restaurantInput = require("../public/js/goingOut");
 
 var parameters = {
   term: "restaurants",
@@ -16,14 +16,14 @@ module.exports = function(app) {
   });
 
   app.put("/api/parameters", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body parsing middleware
-    var userInput = req.body;
+    var restaurantInput = req.body;
 
-    console.log(userInput);
+    console.log(restaurantInput);
 
-    characters.push(userInput);
+    parameters.push(restaurantInput);
 
-    res.json(userInput);
+    res.json(restaurantInput);
   });
 };
+
+module.exports = parameters;

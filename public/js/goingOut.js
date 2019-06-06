@@ -1,7 +1,7 @@
 $("#restaurantSearch").on("click", function(event) {
   event.preventDefault();
 
-  var userInput = {
+  var restaurantInput = {
     term: "restaurants",
     location: $("#zipcode")
       .val()
@@ -13,9 +13,11 @@ $("#restaurantSearch").on("click", function(event) {
     attributes: $("#q5").val()
   };
 
-  console.log(userInput);
+  console.log(restaurantInput);
 
-  $.post("/api/characters", userInput).then(function(data) {
+  $.post("/api/characters", restaurantInput).then(function(data) {
     console.log("goingOut.js", data);
   });
 });
+
+module.exports = restaurantInput;
