@@ -2,6 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 
+
 var db = require("./models");
 
 var app = express();
@@ -26,6 +27,7 @@ require("./routes/recipe-apiRoutes")(app);
 require("./routes/restaurant-apiRoutes")(app);
 require("./routes/user-apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/yelpRoutes")(app);
 
 var syncOptions = { force: false };
 
