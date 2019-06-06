@@ -27,6 +27,7 @@ require("./routes/recipe-apiRoutes")(app);
 require("./routes/restaurant-apiRoutes")(app);
 require("./routes/user-apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/yelpRoutes")(app);
 
 var syncOptions = { force: false };
 
