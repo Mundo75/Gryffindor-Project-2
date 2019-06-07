@@ -1,5 +1,3 @@
-var yelpApiCall = require("../../components/yelpAPI");
-
 $("#restaurantSearch").on("click", function(event) {
   event.preventDefault();
 
@@ -17,11 +15,9 @@ $("#restaurantSearch").on("click", function(event) {
 
   console.log(newRestSearch);
 
-  $.post("/api/parameters", newRestSearch).then(function(data) {
+  $.post("/api/restaurants", newRestSearch).then(function(data) {
     console.log("goingOut.js", data);
   });
 
-  yelpAPI.yelpApiCall();
+ 
 });
-
-//module.exports = restaurantInput;
