@@ -1,29 +1,22 @@
-var API = require("../components/yelpAPI")
-
-var parameters = {
-  term: "restaurants",
-  location: 85016,
-  radius: 4000,
-  categories: "chinese",
-  limit: 3,
-  price: 2,
-  attributes: "none"
-};
+var response = require("../components/yelpAPI");
+//var restaurantInput = require("../public/js/goingOut");
 
 module.exports = function(app) {
-  app.get("/api/parameters", function(req, res) {
-    return res.json(parameters);
+  app.get("/api/Parameters", function(req, res) {
+    return res.json(yelpParameters);
   });
 
-  app.put("/api/parameters", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body parsing middleware
-    var userInput = req.body;
+  app.put("/api/Parameters", function(req, res) {
+    var restResults = req.body;
 
-    console.log(userInput);
+    console.log(restResults);
 
-    characters.push(userInput);
+    yelpParameters.push(restResults);
 
-    res.json(userInput);
+    res.json(restResults);
   });
 };
+
+var restData = response;
+
+//module.exports = yelpParameters;
