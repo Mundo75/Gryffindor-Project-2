@@ -1,7 +1,9 @@
+var yelpApiCall = require("../../components/yelpAPI");
+
 $("#restaurantSearch").on("click", function(event) {
   event.preventDefault();
 
-  var restaurantInput = {
+  var newRestSearch = {
     term: "restaurants",
     location: $("#zipcode")
       .val()
@@ -13,11 +15,13 @@ $("#restaurantSearch").on("click", function(event) {
     attributes: $("#q5").val()
   };
 
-  console.log(restaurantInput);
+  console.log(newRestSearch);
 
-  $.post("/api/characters", restaurantInput).then(function(data) {
+  $.post("/api/parameters", newRestSearch).then(function(data) {
     console.log("goingOut.js", data);
   });
+
+  yelpAPI.yelpApiCall();
 });
 
-module.exports = restaurantInput;
+//module.exports = restaurantInput;

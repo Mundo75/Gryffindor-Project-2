@@ -1,29 +1,22 @@
-var restaurantInput = require("../public/js/goingOut");
-
-var parameters = {
-  term: "restaurants",
-  location: 85016,
-  radius: 4000,
-  categories: "chinese",
-  limit: 3,
-  price: 2,
-  attributes: "none"
-};
+var response = require("../components/yelpAPI");
+//var restaurantInput = require("../public/js/goingOut");
 
 module.exports = function(app) {
-  app.get("/api/parameters", function(req, res) {
-    return res.json(parameters);
+  app.get("/api/Parameters", function(req, res) {
+    return res.json(yelpParameters);
   });
 
-  app.put("/api/parameters", function(req, res) {
-    var restaurantInput = req.body;
+  app.put("/api/Parameters", function(req, res) {
+    var restResults = req.body;
 
-    console.log(restaurantInput);
+    console.log(restResults);
 
-    parameters.push(restaurantInput);
+    yelpParameters.push(restResults);
 
-    res.json(restaurantInput);
+    res.json(restResults);
   });
 };
 
-module.exports = parameters;
+var restData = response;
+
+//module.exports = yelpParameters;
