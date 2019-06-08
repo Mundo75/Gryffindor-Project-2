@@ -1,11 +1,11 @@
 var searchRestaurant = require("../components/yelpAPI");
 
-module.exports = function (app) {
-  app.get("/api/Parameters", function (req, res) {
+module.exports = function(app) {
+  app.get("/api/Parameters", function(req, res) {
     return res.json(yelpParameters);
   });
 
-  app.put("/api/Parameters", function (req, res) {
+  app.put("/api/Parameters", function(req, res) {
     var restResults = req.body;
 
     console.log(restResults);
