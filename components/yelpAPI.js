@@ -1,9 +1,6 @@
 'use strict';
 
 var yelp = require("yelp-fusion");
-//var restData = require("../Data/restData");
-
-
 
 var apiKey = "jh5DFfaTKLWtMJf2-qdZGL7TE2-mH8KYQJ1lNOrLIp7SscIbLeiDIKsKYCAOwAOQTLaVKEv9G3SxdW4kmHNdm1ZyNxjqn5aDxo2Je-tIuoBTxlV12QylFn8pqXzwXHYx";
 

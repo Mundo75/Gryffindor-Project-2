@@ -18,6 +18,4 @@ $("#restaurantSearch").on("click", function(event) {
   $.post("/api/restaurants", newRestSearch).then(function(data) {
     console.log("goingOut.js", data);
   });
-
- 
 });

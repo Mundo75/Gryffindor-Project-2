@@ -23,7 +23,3 @@ module.exports = function (app) {
     });
   });
 };
-
-//var foodData = result.body;
-
-//module.exports = foodParameters;
