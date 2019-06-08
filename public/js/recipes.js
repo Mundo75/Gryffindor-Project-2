@@ -1,20 +1,41 @@
-var foodApiCall = require("../../components/foodAPI");
+var recipeOne = "";
+var recipeTwo = "";
+var recipeThree = "";
 
 $("#recipeSearch").on("click", function(event) {
   event.preventDefault();
 
   var newFoodSearch = {
-    query: "restaurants",
-    cuisine: $("#zipcode").val(),
+    query: "recipe",
+    cuisine: $("#q2").val(),
     diet: $("#q3").val(),
-    excludeIngredients: $("#q2").val(),
-    type: 3
+    excludeIngredients: $("#q4").val(),
+    type: $("#q1").val()
   };
   console.log(newFoodSearch);
 
-  $.post("/api/parameters", newFoodSearch).then(function(data) {
-    console.log("goingOut.js", data);
+  $.post("/api/recipes", newFoodSearch).then(function(data, recipeOne) {
+    console.log("recipes.js", data);
+    recipeOne = data.results[0].id;
+    recipeTwo = data.results[1].id;
+    recipeThree = data.results[2].id;
+    // console.log(recipeOne);
+    // console.log(recipeTwo);
+    // console.log(recipeThree);
+
+    
+    //console.log("Recipe Id", data.results[0].id);
   });
 
-  foodAPI.foodApiCall();
+  $.post("/api/recipe/info", recipeOne).then(function(data) {
+    console.log("1st Recipe Info", data);
+  });
+
+  // $.post("/api/recipe/info", recipeTwo).then(function(data) {
+  //   console.log("2nd Recipe Info", data);
+  
+  //});
 });
+console.log(recipeOne);
+    console.log(recipeTwo);
+    console.log(recipeThree);

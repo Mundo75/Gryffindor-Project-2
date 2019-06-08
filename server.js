@@ -28,7 +28,7 @@ require("./routes/user-apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/yelpRoutes")(app);
 require("./routes/foodAPIRoutes")(app);
-
+require("./routes/food2APIRoutes")(app);
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true

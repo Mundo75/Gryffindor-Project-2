@@ -1,42 +1,52 @@
 var unirest = require("unirest");
-var foodData = require("../Data/foodData");
+//var foodData = require("../Data/foodData");
 
-var q = foodData[0].query;
-var cuisine = foodData[0].cuisine;
-var diet = foodData[0].diet;
-var excludeIngredients = foodData[0].excludeIngredients;
-var type = foodData[0].type;
-var apiKey = "f504da3c21mshe56c513d6a9955dp1b1c63jsn4548cb484cf3";
-var searchURL =
-  "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?";
-var searchParams =
-  "diet=" +
-  diet +
-  "&excludeIngredients=" +
-  excludeIngredients +
-  "&number=3&type=" +
-  type +
-  "&cuisine=" +
-  cuisine +
-  "&query=" +
-  q;
-var searchQuery = searchURL + searchParams;
+function searchRecipe(recipeData, cb) {
+  var foodParameters = {
+    query: "recipe",
+    cuisine: recipeData.cuisine,
+    diet: recipeData.diet,
+    excludeIngredients: recipeData.excludeIngredients,
+    type: recipeData.type
+  };
 
-unirest
-  .get(
-    "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&number=3&type=main+course&query=burger"
-  )
+  var q = foodParameters.query;
+  var cuisine = foodParameters.cuisine;
+  var diet = foodParameters.diet;
+  var excludeIngredients = foodParameters.excludeIngredients;
+  var type = foodParameters.type;
+  var apiKey = "f504da3c21mshe56c513d6a9955dp1b1c63jsn4548cb484cf3";
+  var searchURL =
+    "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?";
+  var searchParams =
+    "cuisine=" +
+    cuisine +
+    "&diet=" +
+    diet +
+    "&excludeIngredients=" +
+    excludeIngredients +
+    "&number=3&type=" +
+    type +
+    "&query=" +
+    q;
+  var searchQuery = searchURL + searchParams;
 
-  .header(
-    "X-RapidAPI-Host",
-    "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-  )
+  unirest
+    .get(searchQuery)
 
-  .header(
-    "X-RapidAPI-Key",
-    "f504da3c21mshe56c513d6a9955dp1b1c63jsn4548cb484cf3"
-  )
+    .header(
+      "X-RapidAPI-Host",
+      "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+    )
 
-  .end(function(result) {
-    console.log(result.body);
-  });
+    .header("X-RapidAPI-Key", apiKey)
+
+    .end(function(result) {
+      cb(result.body);
+      
+
+      
+    });
+}
+
+module.exports = searchRecipe;

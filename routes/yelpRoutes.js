@@ -1,4 +1,4 @@
-var response = require("../components/yelpAPI");
+//var response = require("../components/yelpAPI");
 var searchRestaurant = require("../components/yelpAPI");
 //var restaurantInput = require("../public/js/goingOut");
 
@@ -17,17 +17,17 @@ module.exports = function (app) {
     res.json(restResults);
   });
 
-  app.post("/api/restaurants", function (req, res) {
-    console.log(req.body); 
+  app.post("/api/restaurants", function(req, res) {
+    console.log(req.body);
     searchRestaurant(req.body, function(result) {
       console.log("API Call", result);
       res.json(result);
-
+      
     });
   });
 
 };
 
-var restData = response;
+//var restData = response;
 
 //module.exports = yelpParameters;
