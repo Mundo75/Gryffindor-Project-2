@@ -14,7 +14,7 @@ $("#recipeSearch").on("click", function(event) {
   };
   console.log(newFoodSearch);
 
-  $.post("/api/recipes", newFoodSearch).then(function(data, recipeOne) {
+  $.post("/api/recipes", newFoodSearch).then(function(data) {
     console.log("recipes.js", data);
     recipeOne = data.results[0].id;
     recipeTwo = data.results[1].id;
@@ -26,16 +26,20 @@ $("#recipeSearch").on("click", function(event) {
     
     //console.log("Recipe Id", data.results[0].id);
   });
+  
+  var newRecipeID = {
+    id: ""
+  }
 
-  $.post("/api/recipe/info", recipeOne).then(function(data) {
+  $.post("/api/recipe/info", newRecipeID).then(function(data) {
     console.log("1st Recipe Info", data);
   });
 
-  // $.post("/api/recipe/info", recipeTwo).then(function(data) {
+  // $.post("/api/recipe/info", recipeTwo).then(function(data) {h
   //   console.log("2nd Recipe Info", data);
   
   //});
 });
-console.log(recipeOne);
+    console.log(recipeOne);
     console.log(recipeTwo);
     console.log(recipeThree);
