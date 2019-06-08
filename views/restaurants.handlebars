@@ -17,78 +17,78 @@
         <li class="nav-item">
           <a class="nav-link" href="/views/restaurants">Restaurants</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/views/questionare-answers">Answers</a>
-        </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Restaurants" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
   </nav>
   <br>
   <div class="container">
-    <h2><strong>Restaurant Questionare</strong></h2>
-    <hr />
-    <form>
-      Name (Required)<br />
-      <input type="text" id="name" class="form-control" />
+    <div id="results">
+
+    </div>
+    <div id="restaurant-survey">
+
+      <h2><strong>Restaurant Questionare</strong></h2>
+      <hr />
+      <form>
+        Name (Required)<br />
+        <input type="text" id="name" class="form-control" />
+        <br>
+        <h5>Question 1</h5>
+        <h6>Please enter your Current Zipcode</h6>
+        <input type="text" id="zipcode" class="form-control" placeholder="Zipcode" />
+        <br>
+        <h5>Question 2</h5>
+        <h6>What type of food are you craving??</h6>
+        <select name="question" id="q2">
+          <option value="american">American</option>
+          <option value="brazilian">Brazilian</option>
+          <option value="cajun">Cajun</option>
+          <option value="caribbean">Caribbean</option>
+          <option value="chinese">Chinese</option>
+          <option value="french">French</option>
+          <option value="greek">Greek</option>
+          <option value="indian">Indian</option>
+          <option value="italian">Italian</option>
+          <option value="mexican">Mexican</option>
+          <option value="thai">Thai</option>
+          <option value="vietnamese">Vietnamese</option>
+        </select>
+        <br><br>
+        <h5>Question 3</h5>
+        <h6>How far are you willing to travel for deliciousness?</h6>
+        <select name="question" id="q3">
+          <option value="8000">5 miles</option>
+          <option value="16100">10 miles</option>
+          <option value="24100">15 miles</option>
+          <option value="32200">20 miles</option>
+          <option value="40000">25 miles</option>
+        </select>
+        <br><br>
+        <h5>Question 4</h5>
+        <h6>How much are you looking to spend?</h6>
+        <select name="question" id="q4">
+          <option value="1">Inexpensive</option>
+          <option value="2">Moderate</option>
+          <option value="3">Pricy</option>
+          <option value="4">Ultra High End</option>
+        </select>
+        <br><br>
+        <h5>Question 5</h5>
+        <h6>special considerations?</h6>
+        <select name="question" id="q5">
+          <option value="none">None</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="wheelchair_accessible">Wheelchair Accessible</option>
+          <option value="gender_neutral_restrooms">Gender neutral restrooms</option>
+          <option value="pet_friendly">Pet Friendly</option>
+        </select>
+        <br><br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="restaurantSearch"><i
+            class="fa fa-check-circle"></i>
+          Submit</button>
+      </form>
       <br>
-      <h5>Question 1</h5>
-      <h6>Please enter your Current Zipcode</h6>
-      <input type="text" id="zipcode" class="form-control" placeholder="Zipcode" />
-      <br>
-      <h5>Question 2</h5>
-      <h6>What type of food are you craving??</h6>
-      <select name="question" id="q2">
-        <option value="american">American</option>
-        <option value="brazilian">Brazilian</option>
-        <option value="cajun">Cajun</option>
-        <option value="caribbean">Caribbean</option>
-        <option value="chinese">Chinese</option>
-        <option value="french">French</option>
-        <option value="greek">Greek</option>
-        <option value="indian">Indian</option>
-        <option value="italian">Italian</option>
-        <option value="mexican">Mexican</option>
-        <option value="thai">Thai</option>
-        <option value="vietnamese">Vietnamese</option>
-      </select>
-      <br><br>
-      <h5>Question 3</h5>
-      <h6>How far are you willing to travel for deliciousness?</h6>
-      <select name="question" id="q3">
-        <option value="8000">5 miles</option>
-        <option value="16100">10 miles</option>
-        <option value="24100">15 miles</option>
-        <option value="32200">20 miles</option>
-        <option value="40000">25 miles</option>
-      </select>
-      <br><br>
-      <h5>Question 4</h5>
-      <h6>How much are you looking to spend?</h6>
-      <select name="question" id="q4">
-        <option value="1">Inexpensive</option>
-        <option value="2">Moderate</option>
-        <option value="3">Pricy</option>
-        <option value="4">Ultra High End</option>
-      </select>
-      <br><br>
-      <h5>Question 5</h5>
-      <h6>special considerations?</h6>
-      <select name="question" id="q5">
-        <option value="none">None</option>
-        <option value="vegetarian">Vegetarian</option>
-        <option value="wheelchair_accessible">Wheelchair Accessible</option>
-        <option value="gender_neutral_restrooms">Gender neutral restrooms</option>
-        <option value="pet_friendly">Pet Friendly</option>
-      </select>
-      <br><br>
-      <button type="submit" class="btn btn-primary btn-lg btn-block" id="restaurantSearch"><i class="fa fa-check-circle"></i>
-        Submit</button>
-    </form>
-    <br>
+    </div>
   </div>
   <!-- Modal -->
   {{!-- <div id="results-modal" class="modal fade" role="dialog">
@@ -111,5 +111,5 @@
 
     </div>
   </div> --}}
-<script src="https://code.jquery.com/jquery.js"></script>
-  <script type="text/javascript" src="/js/goingOut.js"></script>  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="/js/goingOut.js"></script>

@@ -10,9 +10,7 @@ function recipeDataOne(idRecipeOne, cb) {
 
   unirest
     .get(
-      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" +
-        id +
-        "/information"
+      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + id + "/information"
     )
     .header(
       "X-RapidAPI-Host",
@@ -24,7 +22,7 @@ function recipeDataOne(idRecipeOne, cb) {
     )
     .end(function(result) {
       cb(result.body);
-      console.log(result.body);
+      //console.log(result.body);
     });
 }
 

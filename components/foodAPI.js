@@ -43,9 +43,6 @@ function searchRecipe(recipeData, cb) {
 
     .end(function(result) {
       cb(result.body);
-      
-
-      
     });
 }
 

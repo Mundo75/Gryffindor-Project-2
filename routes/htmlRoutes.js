@@ -1,6 +1,5 @@
 var db = require("../models");
 
-
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -25,6 +24,14 @@ module.exports = function(app) {
   app.get("/views/questionare-answers", function(req, res) {
     db.User.findAll({}).then(function(data) {
       res.render("questionare-answers", {
+        msg: "Welcome!",
+        examples: data
+      });
+    });
+  });
+  app.get("/views/restaurant-answers", function(req, res) {
+    db.User.findAll({}).then(function(data) {
+      res.render("restaurant-answers", {
         msg: "Welcome!",
         examples: data
       });
