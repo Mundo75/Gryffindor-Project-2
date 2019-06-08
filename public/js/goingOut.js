@@ -20,6 +20,7 @@ $("#restaurantSearch").on("click", function(event) {
   $.post("/api/restaurants", newRestSearch).then(function(data) {
     console.log("goingOut.js", data);
 
+
     $.each(data, function(i, item) {
       var name = item.name;
       var image = item.image_url;

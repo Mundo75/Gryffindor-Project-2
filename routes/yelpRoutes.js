@@ -1,6 +1,4 @@
-//var response = require("../components/yelpAPI");
 var searchRestaurant = require("../components/yelpAPI");
-//var restaurantInput = require("../public/js/goingOut");
 
 module.exports = function(app) {
   app.get("/api/Parameters", function(req, res) {
@@ -25,7 +23,3 @@ module.exports = function(app) {
     });
   });
 };
-
-//var restData = response;
-
-//module.exports = yelpParameters;
