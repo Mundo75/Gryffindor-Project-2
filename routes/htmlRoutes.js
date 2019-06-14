@@ -21,6 +21,14 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/views/feedback", function(req, res) {
+    db.User.findAll({}).then(function(data) {
+      var userData = {
+        users: data
+      };
+      res.render("feedback", userData);
+    });
+  });
   app.get("/views/questionare-answers", function(req, res) {
     db.User.findAll({}).then(function(data) {
       res.render("questionare-answers", {
